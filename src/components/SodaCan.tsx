@@ -29,7 +29,7 @@ export function SodaCan({
   scale = 2,
   ...props
 }: SodaCanProps) {
-  const { nodes } = useGLTF("../../../public/Soda-can.gltf");
+  const { nodes } = useGLTF("/Soda-can.gltf");
 
   const labels = useTexture(flavorTextures);
 

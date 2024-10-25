@@ -84,9 +84,10 @@ export default function Hero() {
     { dependencies: [ready, isDesktop] }
   );
   return (
-    <div className="w-full hero ">
+    <div className="hero opacity-0 px-4 first:pt-10 md:px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
       {isDesktop && (
-        <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block ">
+        <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
           <Scene />
           <Bubbles count={300} speed={2} repeat={true} />
         </View>
@@ -139,6 +140,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      </div>
+     
     </div>
   );
 }

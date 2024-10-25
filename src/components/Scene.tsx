@@ -139,7 +139,7 @@ export default function Scene() {
       <FloatingCan ref={can5Ref} flavor="watermelon" floatSpeed={FLOAT_SPEED} />
 
       {/* <OrbitControls /> */}
-      <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
+      <Environment files="/hdrs/lobby.hdr" environmentIntensity={1.5} />
     </group>
   );
 }

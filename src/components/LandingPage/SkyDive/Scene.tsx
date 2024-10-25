@@ -8,16 +8,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import FloatingCan from "@/components/FloatingCan";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { flavorTextures } from "@/components/SodaCan";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 type SkyDiveProps = {
   sentence: string | null;
-  flavor: keyof typeof flavorTextures;
 };
 
-export default function Scene({ sentence, flavor }: SkyDiveProps) {
+export default function Scene({ sentence }: SkyDiveProps) {
   const groupRef = useRef<THREE.Group>(null);
   const canRef = useRef<THREE.Group>(null);
   const cloud1Ref = useRef<THREE.Group>(null);
@@ -137,7 +135,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
       <group rotation={[0, 0, 0.5]}>
         <FloatingCan
           ref={canRef}
-          flavor={flavor}
+          flavor={"blackCherry"}
           rotationIntensity={0}
           floatIntensity={3}
           floatSpeed={3}
@@ -159,7 +157,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
 
       {/* Lights */}
       <ambientLight intensity={2} color="#9DDEFA" />
-      <Environment files="/hdr/field.hdr" environmentIntensity={1.5} />
+      <Environment files="/hdrs/field.hdr" environmentIntensity={1.5} />
     </group>
   );
 }

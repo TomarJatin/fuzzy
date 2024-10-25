@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ViewCanvas from "@/components/ViewCanvas";
+import Header from "@/components/LandingPage/Header";
+import Footer from "@/components/LandingPage/Footer";
 
 const geistSans = localFont({
   src: "../../public/fonts/GeistVF.woff",
@@ -28,7 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main>
+          {children}
+          <ViewCanvas />
+        </main>
+        <Footer />
       </body>
     </html>
   );

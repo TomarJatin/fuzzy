@@ -4,13 +4,13 @@ import Scene from "./Scene";
 
 export default function SkyDive() {
   return (
-    <div className="px-4 first:pt-10 md:px-6 skydive h-screen">
+    <section className="px-4 first:pt-10 md:px-6 skydive h-screen">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
         <h2 className="sr-only">Dive into better health</h2>
         <View className="h-screen w-screen">
-          <Scene flavor={"lemonLime"} sentence={"Dive into better health"} />
+          <Scene  sentence={"Dive into better health"} />
         </View>
       </div>
-    </div>
+    </section>
   );
 }
