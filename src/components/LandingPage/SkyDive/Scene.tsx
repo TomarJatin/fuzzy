@@ -11,11 +11,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-type SkyDiveProps = {
-  sentence: string | null;
-};
-
-export default function Scene({ sentence }: SkyDiveProps) {
+export default function Scene() {
   const groupRef = useRef<THREE.Group>(null);
   const canRef = useRef<THREE.Group>(null);
   const cloud1Ref = useRef<THREE.Group>(null);
@@ -152,7 +148,7 @@ export default function Scene({ sentence }: SkyDiveProps) {
 
       {/* Text */}
       <group ref={wordsRef}>
-        {sentence && <ThreeText sentence={sentence} color="#F97315" />}
+         <ThreeText color="#F97315" />
       </group>
 
       {/* Lights */}
@@ -163,13 +159,11 @@ export default function Scene({ sentence }: SkyDiveProps) {
 }
 
 function ThreeText({
-  sentence,
   color = "white",
 }: {
-  sentence: string;
   color?: string;
 }) {
-  const words = sentence.toUpperCase().split(" ");
+  const words = "Dive into better health".toUpperCase().split(" ");
 
   const material = new THREE.MeshLambertMaterial();
   const isDesktop = useMediaQuery("(min-width: 950px)", true);
@@ -180,7 +174,7 @@ function ThreeText({
       scale={isDesktop ? 1 : 0.5}
       color={color}
       material={material}
-      font="/fonts/Alpino-Variable.woff"
+      // font="/fonts/Alpino-Variable.woff"
       fontWeight={900}
       anchorX={"center"}
       anchorY={"middle"}

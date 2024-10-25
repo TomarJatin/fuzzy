@@ -8,7 +8,7 @@ export default function SkyDive() {
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
         <h2 className="sr-only">Dive into better health</h2>
         <View className="h-screen w-screen">
-          <Scene  sentence={"Dive into better health"} />
+          <Scene />
         </View>
       </div>
     </section>
