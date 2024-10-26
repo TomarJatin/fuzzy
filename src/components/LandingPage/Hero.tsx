@@ -51,7 +51,7 @@ export default function Hero() {
           trigger: ".hero",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1.5,
+          scrub: 3,
         },
       });
 
